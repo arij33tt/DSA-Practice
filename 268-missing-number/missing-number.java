@@ -1,16 +1,19 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        Arrays.sort(nums);
-        int len = nums.length;
+       int [] freq = new int [nums.length+1];
 
-        if(nums[len-1]!=len) return len;
-        for(int i=0;i<nums.length;i++)
+       for( int i : nums)
+       {
+        freq[i]++;
+       }
+
+       for(int i=0;i<=nums.length;i++)
+       {
+        if( freq[i]==0)
         {
-            if(i !=nums[i]) return i;
-
-
+            return i;
         }
+       }
 
-        return 0;
-    }
+       return -1;    }
 }

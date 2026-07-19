@@ -1,19 +1,25 @@
 class Solution {
     public int missingNumber(int[] nums) {
-       int [] freq = new int [nums.length+1];
+      int xor1=0;
+        int xor2=0;
 
-       for( int i : nums)
-       {
-        freq[i]++;
-       }
+        int n = nums.length+1;
 
-       for(int i=0;i<=nums.length;i++)
-       {
-        if( freq[i]==0)
+        int len = nums.length;
+
+        for(int i=0;i<n ;i++)
         {
-            return i;
+            xor1^=i;
         }
-       }
 
-       return -1;    }
+        for(int i=0;i<len;i++)
+        {
+            xor2^=nums[i]; 
+        }
+
+        return xor1^xor2;
+
+       
+       
+        }
 }

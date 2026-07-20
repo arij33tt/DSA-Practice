@@ -11,22 +11,25 @@ class Solution {
             }
         }
 
-        if(index==-1)
-        {
-            reverse(nums, 0, nums.length - 1);
+
+        if(index==-1){
+            reverse(nums,0,n-1);
             return ;
         }
-         for(int i=n-1;i>index;i--)
-         {
+
+        for(int i=n-1;i>index;i--)
+        {
             if(nums[i]>nums[index])
             {
-                int temp = nums[i];
-                nums[i]= nums[index];
-                nums[index]= temp;    
+                swap(nums,i,index);
                 break;
-            }}
+            }
 
-            reverse (nums,index+1,n-1);
+
+        }
+
+        reverse (nums,index+1,n-1);
+
 
     }
 

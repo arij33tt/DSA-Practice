@@ -3,11 +3,11 @@ class Solution {
       int max=0;
 
       
-      int j = arr.length-1;
+      int j = arr.length;
 
      int min= arr[0];
 
-     for(int i=1;i<j+1;i++)
+     for(int i=1;i<j;i++)
      {
         min = Math.min(min,arr[i]);
 

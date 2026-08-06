@@ -1,25 +1,18 @@
 class Solution {
     public int missingNumber(int[] nums) {
-      int xor1=0;
-        int xor2=0;
+     int actual_sum = 0;
+    int expected_sum=0;
 
-        int n = nums.length+1;
+    int n = nums.length;
 
-        int len = nums.length;
+    actual_sum = (n*(n+1))/2;
 
-        for(int i=0;i<n ;i++)
-        {
-            xor1^=i;
-        }
+    for(int i=0;i<n;i++){
+        expected_sum+=nums[i];
+    }
 
-        for(int i=0;i<len;i++)
-        {
-            xor2^=nums[i]; 
-        }
 
-        return xor1^xor2;
-
-       
+    return actual_sum - expected_sum;      
        
         }
 }
